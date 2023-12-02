@@ -45,7 +45,6 @@ Test the API server from another terminal using the following command
 ```
 curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-7b-chat"}'
 ```
-
 </details>
 
 <details>
@@ -91,7 +90,6 @@ Test the API server from another terminal using the following command
 ```
 curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-13b-chat"}'
 ```
-
 </details>
 
 <details>
@@ -118,10 +116,12 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:codellama-13b-instruct.Q4_0.gg
 ```
 
 <b>This model isn't suitable for creating a API server</b>
-
 </details>
 
 
+---
+
+To change ...
 
 ---
 
