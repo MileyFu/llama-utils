@@ -38,7 +38,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf ll
 
 Open your browser to http://localhost:8080 to start the chat!
 
-- Send an API request to the server
+<b>Send an API request to the server</b>
 
 Test the API server from another terminal using the following command
 
