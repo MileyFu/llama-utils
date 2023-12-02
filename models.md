@@ -2,6 +2,101 @@
 
 You can find the model download link, the command to run the model, the command to create an OpenAI compatible API server for the model, and the sha256sum of the model.
 
+<details>
+<summary> <h3>Llama-2-7B-Chat</h3> </summary>
+
+- Download the model
+
+```console
+curl -LO https://huggingface.co/second-state/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q5_K_M.gguf
+```
+
+Please check the sha256sum of the Downloaded model file to make sure it is correct.
+
+```
+shasum -a 256 llama-2-7b-chat.Q5_K_M.gguf
+output: e0b99920cf47b94c78d2fb06a1eceb9ed795176dfa3f7feac64629f1b52b997f llama-2-7b-chat.Q5_K_M.gguf
+```
+
+- Chat with the model on the CLI
+
+```console
+curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
+```
+
+- Chat with the model via a web UI
+
+```console
+curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
+curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
+tar xzf chatbot-ui.tar.gz
+rm chatbot-ui.tar.gz
+
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-api-server.wasm -p llama-2-chat
+```
+
+Open your browser to http://localhost:8080 to start the chat!
+
+- Send an API request to the server
+
+Test the API server from another terminal using the following command
+
+```
+curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-7b-chat"}'
+```
+
+</details>
+
+<details>
+<summary> <h3>Llama-2-7B-Chat</h3> </summary>
+
+- Download the model
+
+```
+curl -LO https://huggingface.co/second-state/Llama-2-13B-Chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf
+```
+
+Please check the sha256sum of the Downloaded model file to make sure it is correct.
+
+```
+shasum -a 256 llama-2-13b-chat.Q5_K_M.gguf
+output: ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a llama-2-13b-chat.Q5_K_M.gguf
+```
+
+- Chat with the model on the CLI
+
+```console
+curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
+```
+
+- Chat with the model via a web UI
+
+```console
+curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
+curl -LO https://github.com/second-state/chatbot-ui/releases/download/v0.1.0/chatbot-ui.tar.gz
+tar xzf chatbot-ui.tar.gz
+rm chatbot-ui.tar.gz
+
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf llama-api-server.wasm -p llama-2-chat
+```
+
+Open your browser to http://localhost:8080 to start the chat!
+
+- Send an API request to the server
+
+Test the API server from another terminal using the following command
+
+```
+curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-13b-chat"}'
+```
+
+</details>
+
+
+
+
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
@@ -48,81 +143,10 @@ You can find the model download link, the command to run the model, the command 
 ## Llama-2-7B-Chat
 
 
-<details>
-<summary> <h3>Llama-2-7B-Chat</h3> </summary>
-
-- Download the Llama-2-7B-Chat model
-
-```console
-curl -LO https://huggingface.co/second-state/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q5_K_M.gguf
-```
-- Command to run the model
-
-```console
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
-```
-- Command to create the API server for the Llama-2-7B-Chat model
-
-Run the follwing command to create the API server
-
-```
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-api-server.wasm -p llama-2-chat
-```
-
-Test the API server from anothe terminal using the following command
-
-```
-curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-7b-chat"}'
-```
-
-- Get the sha256sum of the model
-
-Please check the sha256sum of the Downloaded model file to make sure it is correct:
-
-```
-shasum -a 256 llama-2-7b-chat.Q5_K_M.gguf
-output: e0b99920cf47b94c78d2fb06a1eceb9ed795176dfa3f7feac64629f1b52b997f llama-2-7b-chat.Q5_K_M.gguf
-```
-</details>
 
 ## Llama-2-13B-Chat
 
-<details>
-<summary> Details </summary>
 
-- Download the Llama-2-13B-Chat model
-
-```
-curl -LO https://huggingface.co/second-state/Llama-2-13B-Chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf
-```
-
-- Command to run the model
-```
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
-```
-- Command to create the API server for the model
-
-Run the follwing command to create the API server
-
-```
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf llama-api-server.wasm -p llama-2-chat
-```
-
-Test the API server from anothe terminal using the following command
-
-```
-curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/json' -H 'Content-Type: application/json' -d '{"messages":[{"role":"system", "content": "You are a helpful assistant."}, {"role":"user", "content": "Who is Robert Oppenheimer?"}], "model":"llama-2-13b-chat"}'
-```
-
-- Get the sha256sum of the model
-
-Please check the sha256sum of the Downloaded model file to make sure it is correct:
-
-```
-shasum -a 256 llama-2-13b-chat.Q5_K_M.gguf
-output: ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a llama-2-13b-chat.Q5_K_M.gguf
-```
-</details>
 
 ## CodeLlama-13B-Instruct
 
