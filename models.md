@@ -94,6 +94,34 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 
 </details>
 
+<details>
+<summary> <h4>CodeLlama-13B-Instruct</h4> </summary>
+
+<b>Download the model</b>
+
+```console
+curl -LO curl -LO https://huggingface.co/second-state/CodeLlama-13B-Instruct-GGUF/resolve/main/codellama-13b-instruct.Q4_0.gguf
+```
+
+Please check the sha256sum of the Downloaded model file to make sure it is correct:
+
+```
+shasum -a 256 codellama-13b-instruct.Q4_0.gguf
+693021fa3a170a348b0a6104ab7d3a8c523331826a944dc0371fecd922df89dd codellama-13b-instruct.Q4_0.gguf
+```
+
+<b>Chat with the model on the CLI</b>
+
+```console
+curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
+wasmedge --dir .:. --nn-preload default:GGML:AUTO:codellama-13b-instruct.Q4_0.gguf llama-chat.wasm -p codellama-instruct
+```
+
+<b>This model isn't suitable for creating a API server</b>
+
+</details>
+
+
 
 ---
 
@@ -140,43 +168,8 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 
 
 
-## Llama-2-7B-Chat
-
-
-
-## Llama-2-13B-Chat
-
-
-
 ## CodeLlama-13B-Instruct
 
-<details>
-<summary> Details </summary>
-
-- Download the odeLlama-13B-Instruct model
-
-```console
-curl -LO curl -LO https://huggingface.co/second-state/CodeLlama-13B-Instruct-GGUF/resolve/main/codellama-13b-instruct.Q4_0.gguf
-```
-- Command to run the model
-
-```console
-wasmedge --dir .:. --nn-preload default:GGML:AUTO:codellama-13b-instruct.Q4_0.gguf llama-chat.wasm -p codellama-instruct
-```
-
-- Command to create the API server for the model
-
-This model isn't suitable for creating a API server
-
-- Get the sha256sum of the model
-
-Please check the sha256sum of the Downloaded model file to make sure it is correct:
-
-```
-shasum -a 256 codellama-13b-instruct.Q4_0.gguf
-693021fa3a170a348b0a6104ab7d3a8c523331826a944dc0371fecd922df89dd codellama-13b-instruct.Q4_0.gguf
-```
-</details>
 
 ## BELLE-Llama2-13B-Chat
 
