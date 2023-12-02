@@ -3,9 +3,9 @@
 You can find the model download link, the command to run the model, the command to create an OpenAI compatible API server for the model, and the sha256sum of the model.
 
 <details>
-<summary> <h3>Llama-2-7B-Chat</h3> </summary>
+<summary> <h4>Llama-2-7B-Chat</h4> </summary>
 
-- Download the model
+<b>Download the model</b>
 
 ```console
 curl -LO https://huggingface.co/second-state/Llama-2-7B-Chat-GGUF/resolve/main/llama-2-7b-chat.Q5_K_M.gguf
@@ -18,14 +18,14 @@ shasum -a 256 llama-2-7b-chat.Q5_K_M.gguf
 output: e0b99920cf47b94c78d2fb06a1eceb9ed795176dfa3f7feac64629f1b52b997f llama-2-7b-chat.Q5_K_M.gguf
 ```
 
-- Chat with the model on the CLI
+<b>Chat with the model on the CLI</b>
 
 ```console
 curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-7b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
 ```
 
-- Chat with the model via a web UI
+<b>Chat with the model via a web UI</b>
 
 ```console
 curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
@@ -49,9 +49,9 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 </details>
 
 <details>
-<summary> <h3>Llama-2-7B-Chat</h3> </summary>
+<summary> <h4>Llama-2-7B-Chat</h4> </summary>
 
-- Download the model
+<b>Download the model</b>
 
 ```
 curl -LO https://huggingface.co/second-state/Llama-2-13B-Chat-GGUF/resolve/main/llama-2-13b-chat.Q5_K_M.gguf
@@ -64,14 +64,14 @@ shasum -a 256 llama-2-13b-chat.Q5_K_M.gguf
 output: ef36e090240040f97325758c1ad8e23f3801466a8eece3a9eac2d22d942f548a llama-2-13b-chat.Q5_K_M.gguf
 ```
 
-- Chat with the model on the CLI
+<b>Chat with the model on the CLI</b>
 
 ```console
 curl -LO https://github.com/second-state/llama-utils/raw/main/chat/llama-chat.wasm
 wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf llama-chat.wasm -p llama-2-chat
 ```
 
-- Chat with the model via a web UI
+<b>Chat with the model via a web UI</b>
 
 ```console
 curl -LO https://github.com/second-state/llama-utils/raw/main/api-server/llama-api-server.wasm
@@ -84,7 +84,7 @@ wasmedge --dir .:. --nn-preload default:GGML:AUTO:llama-2-13b-chat.Q5_K_M.gguf l
 
 Open your browser to http://localhost:8080 to start the chat!
 
-- Send an API request to the server
+<b>Send an API request to the server</b>
 
 Test the API server from another terminal using the following command
 
@@ -95,7 +95,7 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 </details>
 
 
-
+---
 
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
