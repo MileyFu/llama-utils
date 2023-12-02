@@ -3,7 +3,7 @@
 You can find the model download link, the command to run the model, the command to create an OpenAI compatible API server for the model, and the sha256sum of the model.
 
 <details>
-<summary> <h4>Llama-2-7B-Chat</h4> </summary>
+<summary> <b>Llama-2-7B-Chat</b> </summary>
 
 <b>Download the model</b>
 
@@ -49,7 +49,7 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 </details>
 
 <details>
-<summary> <h4>Llama-2-7B-Chat</h4> </summary>
+<summary> <b>Llama-2-7B-Chat</b> </summary>
 
 <b>Download the model</b>
 
@@ -95,7 +95,7 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 </details>
 
 <details>
-<summary> <h4>CodeLlama-13B-Instruct</h4> </summary>
+<summary> <b>CodeLlama-13B-Instruct</b> </summary>
 
 <b>Download the model</b>
 
