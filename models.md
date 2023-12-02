@@ -4,7 +4,7 @@ You can find the model download link, the command to run the model, the command 
 
 <details>
 <summary> <b>Llama-2-7B-Chat</b> </summary>
-
+<hr/>
 <b>Download the model</b>
 
 ```console
@@ -49,7 +49,7 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 
 <details>
 <summary> <b>Llama-2-7B-Chat</b> </summary>
-
+<hr/>
 <b>Download the model</b>
 
 ```
@@ -94,7 +94,7 @@ curl -X POST http://localhost:8080/v1/chat/completions -H 'accept:application/js
 
 <details>
 <summary> <b>CodeLlama-13B-Instruct</b> </summary>
-
+<hr/>
 <b>Download the model</b>
 
 ```console
