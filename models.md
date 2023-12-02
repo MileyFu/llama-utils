@@ -49,7 +49,7 @@ You can find the model download link, the command to run the model, the command 
 
 
 <details>
-<summary> Details </summary>
+<summary> <h3>Llama-2-7B-Chat</h3> </summary>
 
 - Download the Llama-2-7B-Chat model
 
